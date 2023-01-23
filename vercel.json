@@ -1,0 +1,21 @@
+{
+  "version": 2,
+  "name": "desafio-frontend-modulo5",
+  "builds": [
+    {
+      "src": "server.js",
+      "use": "@vercel/node"
+    },
+    {
+      "src": "build/**",
+      "use": "@vercel/static"
+    }
+  ],
+  "rewrites": [
+    {
+      "source": "/api/todo/(.*)",
+      "destination": "server.js"
+    },
+    { "source": "/(.*)", "destination": "/" }
+  ]
+}
